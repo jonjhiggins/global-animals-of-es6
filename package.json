@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "cp -R bower_components/milligram/dist/ src/css && node bs.js"
+    "serve": "cp -R bower_components/milligram/dist/ src/css && watchify src/js/main.js -o src/js/bundle.min.js | node bs.js"
   },
   "author": "Jon Higgins",
   "license": "ISC",
   "devDependencies": {
     "bower": "^1.7.9",
-    "browser-sync": "latest"
+    "browser-sync": "latest",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "browserify": "^13.1.1"
   }
 }
