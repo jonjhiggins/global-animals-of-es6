@@ -19,8 +19,6 @@ module.exports = () => {
         // [ES6: destructing objects]
         const {nameSelect, countrySelect, contentDiv, selects} = view.el;
 
-        console.log(nameSelect, countrySelect);
-
         const selectChange = function() {
             const name = nameSelect.value;
             const country = countrySelect.value;
@@ -56,25 +54,20 @@ module.exports = () => {
 
         const {nameSelect, countrySelect, contentDiv, selects} = view.el;
 
-        let nameHtml = '';
-        let countryHtml = '';
-
         const names = animals.map(animal => animal.name);
         const countries = animals.map(animal => animal.country);
         // [ES6: Set]
         const namesUnique = Array.from(new Set(names));
         const countriesUnique = Array.from(new Set(countries));
 
-        // [ES6: for... of..]
-        for (const value of namesUnique) {
-            // [ES6: template strings, template string functions]
-            nameHtml += `<option value="${utils.dashify(value)}">${value}</option>`;
-        }
 
-        for (const value of countriesUnique) {
-            // [ES6: template strings, template string functions]
-            countryHtml += `<option value="${utils.dashify(value)}">${value}</option>`;
-        }
+        // [ES6: template strings, template string functions]
+        const renderOption = (value) => {
+            return `<option value="${utils.dashify(value)}">${value}</option>`;
+        };
+
+        const nameHtml = `${namesUnique.map(renderOption).join('')}`;
+        const countryHtml = `${countriesUnique.map(renderOption).join('')}`;
 
         // Render HTML
         nameSelect.innerHTML += nameHtml;
