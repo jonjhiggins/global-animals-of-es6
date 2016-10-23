@@ -1,0 +1,15 @@
+{
+  "name": "global-animals-of-es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node bs.js"
+  },
+  "author": "Jon Higgins",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "latest"
+  }
+}
