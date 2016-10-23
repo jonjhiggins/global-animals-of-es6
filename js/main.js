@@ -38,7 +38,7 @@ const init = function() {
 };
 
 const buildImage = function(name, matchName, country, matchCountry) {
-    return `<img src="/img/${name ? name : matchName}_${country ? country : matchCountry}.jpg" class="animals-content__img" alt="">`;
+    return `<img src="img/${name ? name : matchName}_${country ? country : matchCountry}.jpg" class="animals-content__img" alt="">`;
 };
 
 // Attach events
@@ -107,7 +107,7 @@ const renderFormFields = function(animals) {
 
 const getAnimals = function(resolve, reject) {
 
-    const reqUrl = '/data/animals.json';
+    const reqUrl = 'data/animals.json';
 
     // [ES6: fetch]
     const animalsPromise = fetch(reqUrl);
