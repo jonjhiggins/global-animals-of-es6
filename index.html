@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>global-animals-of-es6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/bower_components/milligram/dist/milligram.css">
+    <style type="text/css">
+        img {max-width: 100%;}
+        .animals-content-wrap {
+            padding-top: 100%;
+            position: relative;
+        }
+        .animals-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right:0;
+            border: 1px solid #d1d1d1;
+            border-radius: 0.4rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .animals-content p {
+            margin: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <section id="animals-section" class="animals-section">
+        <div class="container">
+            <h2>Search by</h2>
+            <div class="row row-center">
+                <div class="column">
+                    <form id="animals-form" class="animals-form">
+                        <fieldset>
+                            <select name="animals-name" id="animals-name">
+                                <option value="">Name</option>
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <select name="animals-country" id="animals-country">
+                                <option value="">Country</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="column">
+                    <div class="animals-content-wrap">
+                        <div id="animals-content" class="animals-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script src="semantic/dist/semantic.min.js"></script> -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
