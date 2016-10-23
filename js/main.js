@@ -38,7 +38,7 @@ const init = function() {
 };
 
 const buildImage = function(name, matchName, country, matchCountry) {
-    return `<img src="img/${name ? name : matchName}_${country ? country : matchCountry}.jpg" class="animals-content__img" alt="">`;
+    return `<img src="img/${name ? name : matchName}_${country ? country : matchCountry}_600.jpg" class="animals-content__img" alt="">`;
 };
 
 // Attach events
