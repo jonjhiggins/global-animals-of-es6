@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "node bs.js"
+    "serve": "cp -R bower_components/milligram/dist/ src/css && node bs.js"
   },
   "author": "Jon Higgins",
   "license": "ISC",

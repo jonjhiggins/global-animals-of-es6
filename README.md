@@ -9,3 +9,7 @@ A pointless webapp for me to put in to practice new features of ES6, learned fro
 ## Serve and watch
 
     npm run serve
+
+## Update GitHub Pages
+
+    git subtree push --prefix src origin gh-pages
