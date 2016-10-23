@@ -1,72 +1,3 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-/*jshint esversion: 6 */
-
-module.exports = (url, resolve, reject) => {
-    // [ES6: fetch]
-    const animalsPromise = fetch(url);
-    animalsPromise
-        // [ES6: implicit return]
-        .then(data => data.json())
-        .then(animals => {
-            resolve(animals);
-        })
-        // [ES6: catch]
-        .catch((error) => {
-            reject(error);
-            console.error(error);
-        }
-    );
-};
-
-},{}],2:[function(require,module,exports){
-
-/*jshint esversion: 6 */
-
-// Requires
-const utils = require('./utils');
-const loadData = require('./loadData');
-const view = require('./view');
-
-// Config
-const config = {
-    dataUrl: 'data/animals.json'
-};
-
-// Init
-// [ES6: const]
-const init = function() {
-    const animals = new Promise((resolve, reject) => {
-        loadData(config.dataUrl, resolve, reject);
-    });
-
-    animals
-        .then(view().renderFormFields)
-        .then(view().attachEvents);
-};
-
-
-
-
-init();
-
-},{"./loadData":1,"./utils":3,"./view":4}],3:[function(require,module,exports){
-/*jshint esversion: 6 */
-
-module.exports = {
-    dashify: (string) => string.toLowerCase().replace(' ', '-'),
-    undashify: (string) => {
-        const strings = string.split('-');
-        let newString = '';
-
-        for (const [i, item] of strings.entries()) {
-            newString += item.substr(0,1).toUpperCase() + item.substr(1, item.length);
-            newString += (i < strings.length - 1) ? ' ' : ''; // add space
-        }
-        return newString;
-    }
-};
-
-},{}],4:[function(require,module,exports){
 /*jshint esversion: 6 */
 
 module.exports = () => {
@@ -157,5 +88,3 @@ module.exports = () => {
 
 
 };
-
-},{"./utils":3}]},{},[2]);
